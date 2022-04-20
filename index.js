@@ -25,8 +25,8 @@ inquirer
     },
     {
       type: 'input',
-      message: 'What would you like to be included in your "contributing" section?',
-      name: 'contributing',
+      message: 'What would you like to be included in your "contributions" section?',
+      name: 'contributions',
     },
     {
       type: 'input',
@@ -57,3 +57,26 @@ inquirer
         err ? console.log(err) : console.log('README.md created!')
     );
   });
+
+  const layout = `# ${title}
+
+  * [description]{#description}
+  * [installation]{#installation}
+  * [usage]{#usage}
+  * [contributions]{#contributions}
+  * [questions]{*questions}
+  * [tests]{#tests}
+  * [License]{#license}
+  # Installation
+  ${installation}
+  # Usage
+  ${usage}
+  # Contributions
+  ${contributions}
+  # Questions
+  ${questions}
+  # Tests
+  ${tests}
+  # License
+  ${license}
+  `;
