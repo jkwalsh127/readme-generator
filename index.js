@@ -62,8 +62,10 @@ inquirer
   }) => {
 const filename = `README.md`;
 const githubLink = `Click <a href="https://github.com/${username}" target="_blank">**here**<a> to go to my GitHub profile`
-
+const emailMe = `If you have any questions about this project or would just like to get in touch, you can email me at <a href="mailto:${email}" target="_blank">${email}</a>`
 const layout = `# ${title}
+
+#Table of contents
 * [Description](#description)
 * [Installation](#installation)
 * [Usage](#usage)
@@ -71,17 +73,23 @@ const layout = `# ${title}
 * [Questions](#questions)
 * [Tests](#tests)
 * [License](#license)
+
 # Installation
 ${installation}
+
 ## Usage
 ${usage}
+
 ## Contributions
 ${contributions}
+
 ### Questions
 ${githubLink}
 ${emailMe}
+
 #### Tests
 ${tests}
+
 #### License
 ${license}
 `;
