@@ -55,11 +55,14 @@ inquirer
       installation,
       usage,
       contributions,
-      questions,
       tests,
       license,
+      username,
+      email,
   }) => {
 const filename = `README.md`;
+const githubLink = `Click <a href="https://github.com/${username}" target="_blank">**here**<a> to go to my GitHub profile`
+
 const layout = `# ${title}
 * [Description](#description)
 * [Installation](#installation)
@@ -75,7 +78,8 @@ ${usage}
 ## Contributions
 ${contributions}
 ### Questions
-${questions}
+${githubLink}
+${emailMe}
 #### Tests
 ${tests}
 #### License
