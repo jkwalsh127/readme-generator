@@ -15,7 +15,7 @@ const questions = [
 ];
 
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err) =>
+    fs.writeFile(fileName, layout, (err) =>
         err ? console.log(err) : console.log('README.md created!')
     )
 };
@@ -72,7 +72,7 @@ inquirer
   ])
   .then((data) => {
     generateMarkdown(data);
-    writeToFile(fileName, data);
+    writeToFile(fileName, layout);
   });
 }
 
