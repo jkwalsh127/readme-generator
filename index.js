@@ -59,28 +59,29 @@ inquirer
       tests,
       license,
   }) => {
-    const filename = `README.md`;
-    const layout = `# ${title}
-    * [description](#description)
-    * [installation](#installation)
-    * [usage](#usage)
-    * [contributions](#contributions)
-    * [questions](#questions)
-    * [tests](#tests)
-    * [License](#license)
-    # Installation
-    ${installation}
-    ## Usage
-    ${usage}
-    ## Contributions
-    ${contributions}
-    ### Questions
-    ${questions}
-    #### Tests
-    ${tests}
-    #### License
-    ${license}
-    `;
-    fs.writeFile(filename, layout, (err) =>
-        err ? console.log(err) : console.log('README.md created!')
-    )});
+const filename = `README.md`;
+const layout = `# ${title}
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributions](#contributions)
+* [Questions](#questions)
+* [Tests](#tests)
+* [License](#license)
+# Installation
+${installation}
+## Usage
+${usage}
+## Contributions
+${contributions}
+### Questions
+${questions}
+#### Tests
+${tests}
+#### License
+${license}
+`;
+fs.writeFile(filename, layout, (err) =>
+    err ? console.log(err) : console.log('README.md created!')
+);
+});
