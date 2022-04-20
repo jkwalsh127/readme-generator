@@ -50,33 +50,37 @@ inquirer
       name: 'email',
     },
   ])
-  .then((response) => {
-    console.log(response)
+  .then(({
+      title,
+      installation,
+      usage,
+      contributions,
+      questions,
+      tests,
+      license,
+  }) => {
     const filename = `README.md`;
-    fs.writeFile(filename, JSON.stringify(response, null, '\t'), (err) =>
+    const layout = `# ${title}
+    * [description](#description)
+    * [installation](#installation)
+    * [usage](#usage)
+    * [contributions](#contributions)
+    * [questions](#questions)
+    * [tests](#tests)
+    * [License](#license)
+    # Installation
+    ${installation}
+    ## Usage
+    ${usage}
+    ## Contributions
+    ${contributions}
+    ### Questions
+    ${questions}
+    #### Tests
+    ${tests}
+    #### License
+    ${license}
+    `;
+    fs.writeFile(filename, layout, (err) =>
         err ? console.log(err) : console.log('README.md created!')
-    );
-  });
-
-  const layout = `# ${title}
-
-  * [description]{#description}
-  * [installation]{#installation}
-  * [usage]{#usage}
-  * [contributions]{#contributions}
-  * [questions]{*questions}
-  * [tests]{#tests}
-  * [License]{#license}
-  # Installation
-  ${installation}
-  # Usage
-  ${usage}
-  # Contributions
-  ${contributions}
-  # Questions
-  ${questions}
-  # Tests
-  ${tests}
-  # License
-  ${license}
-  `;
+    )});
