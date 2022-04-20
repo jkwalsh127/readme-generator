@@ -1,99 +1,79 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown');
+const fileName = `README.md`;
+const questions = [
+    'What is the title of your project?',
+    'What would you like to be included in your description?',
+    'What would you like to be included in your installation instructions?',
+    'What would you like to be included in your usage information?',
+    'What would you like to be included in your "contributions" section?',
+    'What would you like to be included in your "tests" section?',
+    'Which license would you like to include?',
+    'What is your GitHub username?',
+    'What is your email?',
+];
 
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) =>
+        err ? console.log(err) : console.log('README.md created!')
+    )
+};
+
+function init() {
 inquirer
   .prompt([
     {
       type: 'input',
-      message: 'What is the title of your project?',
+      message: questions[0],
       name: 'title',
     },
     {
       type: 'input',
-      message: 'What would you like to be included in your description?',
+      message: questions[1],
       name: 'description',
     },
     {
       type: 'input',
-      message: 'What would you like to be included in your installation instructions?',
+      message: questions[2],
       name: 'installation',
     },
     {
       type: 'input',
-      message: 'What would you like to be included in your usage information?',
+      message: questions[3],
       name: 'usage',
     },
     {
       type: 'input',
-      message: 'What would you like to be included in your "contributions" section?',
+      message: questions[4],
       name: 'contributions',
     },
     {
       type: 'input',
-      message: 'What would you like to be included in your "tests" section?',
+      message: questions[5],
       name: 'tests',
     },
     {
       type: 'list',
-      message: 'Which license would you like to include?',
+      message: questions[6],
       name: 'license',
       choices: ['Apache License 2.0', 'GNU General Public License v3.0', 'MIT license', 'BSD 2-Caluse "Simplified" License', 'BSD 3-Clause "New" or "Revised" License', 'Boost Software License 1.0', 'Eclipse Public License 2.0', 'Creative Commons Zero v1.0 Universal', 'GNU General Public License v2.0', 'GNU Affero General Public License v3.0', 'GNU Lesser General Public License v2.1', 'Mozilla Public License 2.0', 'The Unlicense'],
     },
     {
       type: 'input',
-      message: 'What is your GitHub username?',
+      message: questions[7],
       name: 'username',
     },
       {
       type: 'input',
-      message: 'What is your email?',
+      message: questions[8],
       name: 'email',
     },
   ])
-  .then(({
-      title,
-      installation,
-      usage,
-      contributions,
-      tests,
-      license,
-      username,
-      email,
-  }) => {
-const filename = `README.md`;
-const githubLink = `Click <a href="https://github.com/${username}" target="_blank">**here**<a> to go to my GitHub profile`
-const emailMe = `If you have any questions about this project or would just like to get in touch, you can email me at <a href="mailto:${email}" target="_blank">${email}</a>`
-const layout = `# ${title}
+  .then((data) => {
+    generateMarkdown(data);
+    writeToFile(fileName, data);
+  });
+}
 
-#Table of contents
-* [Description](#description)
-* [Installation](#installation)
-* [Usage](#usage)
-* [Contributions](#contributions)
-* [Questions](#questions)
-* [Tests](#tests)
-* [License](#license)
-
-# Installation
-${installation}
-
-## Usage
-${usage}
-
-## Contributions
-${contributions}
-
-### Questions
-${githubLink}
-${emailMe}
-
-#### Tests
-${tests}
-
-#### License
-${license}
-`;
-fs.writeFile(filename, layout, (err) =>
-    err ? console.log(err) : console.log('README.md created!')
-);
-});
+init();
