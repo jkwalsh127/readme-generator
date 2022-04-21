@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
-const fileName = 'README.md';
+const fileName = 'sampleREADME.md';
 
 /**
  * this array of prompts will be sent to the inquirer module in the init() fxn
