@@ -79,10 +79,10 @@ function renderLicenseLink(license) {
  */
 function renderLicenseSection(license) {
     licenseUrl = renderLicenseLink(license);
-    if (!license == 'none') {
-        return licenseSection = `#### License
-        The contents of this repository are protected under the <a href="${licenseUrl}">${license}.</a>`
-    } else return licenseSection = '';
+    if (license == 'none') {
+        return licenseSection = '';
+    } else return licenseSection = `#### License
+The contents of this repository are protected under the <a href="${licenseUrl}">${license}.</a>`;
 };
 
 /**
@@ -93,15 +93,18 @@ function renderLicenseSection(license) {
 function renderTestsSection(tests) {
     if (!tests == '') {
         return testsSection = `#### Tests
-        ${tests}`
+${tests}`
     } else return testsSection = '';
 };
 
 function languagesTable(languages) {
-    languageTable = ``;
-    for (var i = 0; i < languages.length; i++) {
-        languageTable += `| ${languages[i]} | ✅ |\n`;
-    } return languageTable;
+    languageTable = `|  Languages  |    Used     |\n| ----------- | ----------- |\n`;
+    console.log(languages.length);
+    if (languages.length > 1) {
+        for (var i = 0; i < languages.length; i++) {
+            languageTable += `| ${languages[i]} | ✅ |\n`;
+        } return languageTable;
+    } else return languageTable = '';
 };
 
 /**
@@ -114,19 +117,15 @@ function generateMarkdown(data) {
     const licenseBadge = renderLicenseBadge(data.license);
     const licenseSection = renderLicenseSection(data.license);
     const testsSection = renderTestsSection(data.tests);
-
+    // make string from object, make string into array, and pass into the languagesTable() fxn for looping
     const languageString = `${data.languages}`;
     const languageArray = languageString.split(',');
     const languageTable = languagesTable(languageArray);
-    console.log(languageTable);
-    console.log(typeof languageTable);
 
     return `# ${data.title}
 
 ${licenseBadge}
 
-|  Languages  |    Used     | 
-| ----------- | ----------- |
 ${languageTable}
 
 #Table of contents
