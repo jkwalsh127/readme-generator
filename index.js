@@ -16,6 +16,13 @@ const questions = [
         name: 'title',
     },
     {
+        // The languages you used in your project
+        type: 'checkbox',
+        message: 'What languages did you use in your project?',
+        name: 'languages',
+        choices: ['HTML', 'CSS', 'JavaScript'],
+    },
+    {
         // Your description of your project
         type: 'input',
         message: 'What would you like to be included in your description?',
@@ -65,6 +72,7 @@ const questions = [
         name: 'email',
     }
 ];
+
 
 /**
  * 

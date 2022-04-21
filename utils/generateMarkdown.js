@@ -85,11 +85,23 @@ function renderLicenseSection(license) {
     } else return licenseSection = '';
 };
 
+/**
+ * 
+ * @param {string} tests - the tests input by the user, passed from the generateMarkdown() fxn 
+ * @returns {string} - passed to a constant in generateMarkdown() fxn to populate its return string
+ */
 function renderTestsSection(tests) {
     if (!tests == '') {
         return testsSection = `#### Tests
         ${tests}`
     } else return testsSection = '';
+};
+
+function languagesTable(languages) {
+    languageTable = ``;
+    for (var i = 0; i < languages.length; i++) {
+        languageTable += `| ${languages[i]} | ✅ |\n`;
+    } return languageTable;
 };
 
 /**
@@ -103,9 +115,19 @@ function generateMarkdown(data) {
     const licenseSection = renderLicenseSection(data.license);
     const testsSection = renderTestsSection(data.tests);
 
+    const languageString = `${data.languages}`;
+    const languageArray = languageString.split(',');
+    const languageTable = languagesTable(languageArray);
+    console.log(languageTable);
+    console.log(typeof languageTable);
+
     return `# ${data.title}
 
 ${licenseBadge}
+
+|  Languages  |    Used     | 
+| ----------- | ----------- |
+${languageTable}
 
 #Table of contents
 * [Description](#description)
@@ -135,3 +157,4 @@ ${licenseSection}`;
 };
 
 module.exports = generateMarkdown;
+
