@@ -79,7 +79,17 @@ function renderLicenseLink(license) {
  */
 function renderLicenseSection(license) {
     licenseUrl = renderLicenseLink(license);
-    return licenseSection = `The contents of this repository are protected under the <a href="${licenseUrl}">${license}.</a>`;
+    if (!license == 'none') {
+        return licenseSection = `#### License
+        The contents of this repository are protected under the <a href="${licenseUrl}">${license}.</a>`
+    } else return licenseSection = '';
+};
+
+function renderTestsSection(tests) {
+    if (!tests == '') {
+        return testsSection = `#### Tests
+        ${tests}`
+    } else return testsSection = '';
 };
 
 /**
@@ -91,6 +101,7 @@ function generateMarkdown(data) {
     //Pass data to functions dynamically render license info
     const licenseBadge = renderLicenseBadge(data.license);
     const licenseSection = renderLicenseSection(data.license);
+    const testsSection = renderTestsSection(data.tests);
 
     return `# ${data.title}
 
@@ -118,10 +129,8 @@ ${data.credits}
 Click <a href="https://github.com/${data.username}" target="_blank">**here**<a> to go to my GitHub profile
 If you have any questions about this project or would just like to get in touch, you can email me at <a href="mailto:${data.email}" target="_blank">${data.email}</a>
 
-#### Tests
-${data.tests}
+${testsSection}
 
-#### License
 ${licenseSection}`;
 };
 
