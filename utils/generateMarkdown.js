@@ -64,7 +64,7 @@ function renderLicenseLink(license) {
 
 function renderLicenseSection(license) {
     licenseUrl = renderLicenseLink(license);
-    return licenseSection = `<a href="${licenseUrl}">The contents of this repository are protected under the</a>`;
+    return licenseSection = `<a href="${licenseUrl}">The contents of this repository are protected under the ${license}.</a>`;
 };
 
 function generateMarkdown(data) {
@@ -103,8 +103,7 @@ ${emailMe}
 ${data.tests}
 
 #### License
-${licenseSection}
-`;
+${licenseSection}`;
 };
 
 module.exports = renderLicenseBadge;
