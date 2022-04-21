@@ -36,8 +36,8 @@ const questions = [
     {
         // List collaborators, third-party assets, and any tutorials you used in creating the project, and provide aappropriate links
         type: 'input',
-        message: 'What would you like to be included in your "contributions" section?',
-        name: 'contributions',
+        message: 'What would you like to be included in your "credits" section?',
+        name: 'credits',
     },
     {
         // Any tests you wrote for your project will be listed here, along with examples on how to run them
