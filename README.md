@@ -22,7 +22,11 @@ This project uses the power of node.js to generate a README.md file for a user, 
 asd
 
 ## Usage
-sad
+
+sa
+
+https://user-images.githubusercontent.com/101354032/164508680-583eba3b-fd59-4616-9544-01bf4169225a.mp4
+
 
 ## Credits
 as
