@@ -25,7 +25,7 @@ Once everything is installed, using the application is easy. Within the main dir
 
 Watch this quick run through to observe how the application is used (but include more content in your readme than is demonstrated here!)
 
-https://user-images.githubusercontent.com/101354032/164508680-583eba3b-fd59-4616-9544-01bf4169225a.mp4
+https://user-images.githubusercontent.com/101354032/164598808-77fa30e3-9de3-4a79-89de-90a5d328f5c2.mp4
 
 ## Credits
 This was a solo project inspired by the staff at the UC Berkeley full-stack coding bootcamp. Thanks to those instructors and my fellow classmates for providing the knowledge and the incentive. 
