@@ -14,6 +14,7 @@
 * [Installation](#installation)
 * [Usage](#usage)
 * [Credits](#credits)
+* [Contributing](#contributing)
 * [Questions](#questions)
 * [Tests](#tests)
 * [License](#license)
