@@ -25,6 +25,7 @@ To utilize this project, clone this repository onto your machine by running the 
 Once everything is installed, using the application is easy. Within the main directory, simply run the command "node index.js" to initiate the prompts. Answer the prompts as you would like your readme.md to be filled out, and at the end, you will see a new file in the main directory called "sampleREADME.md". This is your newly generated readme file, and yours to do with as you wish.
 
 Watch this quick run through to observe how the application is used (but include more content in your readme than is demonstrated here!)
+
 https://user-images.githubusercontent.com/101354032/164508680-583eba3b-fd59-4616-9544-01bf4169225a.mp4
 
 ## Credits
