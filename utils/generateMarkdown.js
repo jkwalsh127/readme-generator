@@ -4,8 +4,6 @@
  * @returns {string} - license badges to pass into the generateMarkdown() return
  */
 function renderLicenseBadge(license) {
-    console.log(license);
-    console.log(typeof license);
     if (license == 'Apache License 2.0') {
         return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
     } else if (license == 'GNU General Public License v3.0') {
@@ -106,7 +104,7 @@ ${tests}`
  */
  function renderContributingSection(contributing) {
     if (!contributing == '') {
-        return contributingSection = `#### Contributing
+        return contributingSection = `### Contributing
 ${contributing}`
     } else return contributingSection = '';
 };
@@ -118,7 +116,6 @@ ${contributing}`
  */
 function languagesTable(languages) {
     languageTable = `|  Languages  |    Used     |\n| ----------- | ----------- |\n`;
-    console.log(languages.length);
     if (languages.length > 1) {
         for (var i = 0; i < languages.length; i++) {
             languageTable += `| ${languages[i]} | ✅ |\n`;
@@ -169,14 +166,14 @@ ${data.usage}
 ## Credits
 ${data.credits}
 
+${contributingSection}
+
 ### Questions
 Click <a href="https://github.com/${data.username}" target="_blank">**here**<a> to go to my GitHub profile
 
 If you have any questions about this project or would just like to get in touch, you can email me at <a href="mailto:${data.email}" target="_blank">${data.email}</a>
 
 ${testsSection}
-
-${contributingSection}
 
 ${licenseSection}`;
 };
