@@ -101,6 +101,18 @@ ${tests}`
 
 /**
  * 
+ * @param {string} contributing - the contributing guidelines input by the user, passed from the generateMarkdown() fxn 
+ * @returns {string} - passed to a constant in generateMarkdown() fxn to populate its return string
+ */
+ function renderContributingSection(contributing) {
+    if (!contributing == '') {
+        return contributingSection = `#### Contributing
+${contributing}`
+    } else return contributingSection = '';
+};
+
+/**
+ * 
  * @param {array} languages - the user selected languages, passed as an array from generateMarkdown() fxn
  * @returns {string} - returns string to be included in generateMarkdown() return that is either a populated table or empty 
  */
@@ -124,6 +136,7 @@ function generateMarkdown(data) {
     const licenseBadge = renderLicenseBadge(data.license);
     const licenseSection = renderLicenseSection(data.license);
     const testsSection = renderTestsSection(data.tests);
+    const contributingSection = renderContributingSection(data.contributing);
     // make string from object, make string into array, and pass into the languagesTable() fxn for looping
     const languageString = `${data.languages}`;
     const languageArray = languageString.split(',');
@@ -162,6 +175,8 @@ Click <a href="https://github.com/${data.username}" target="_blank">**here**<a> 
 If you have any questions about this project or would just like to get in touch, you can email me at <a href="mailto:${data.email}" target="_blank">${data.email}</a>
 
 ${testsSection}
+
+${contributingSection}
 
 ${licenseSection}`;
 };

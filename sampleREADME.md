@@ -1,6 +1,6 @@
-# as
+# wq
 
-[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 |  Languages  |    Used     |
 | ----------- | ----------- |
@@ -19,24 +19,27 @@
 * [License](#license)
 
 # Description
-as
+qw
 
 ## Installation
-sa
+qw
 
 ## Usage
-s
+qw
 
 ## Credits
-as
+qw
 
 ### Questions
-Click <a href="https://github.com/as" target="_blank">**here**<a> to go to my GitHub profile
+Click <a href="https://github.com/qw" target="_blank">**here**<a> to go to my GitHub profile
 
-If you have any questions about this project or would just like to get in touch, you can email me at <a href="mailto:as" target="_blank">as</a>
+If you have any questions about this project or would just like to get in touch, you can email me at <a href="mailto:qw" target="_blank">qw</a>
 
 #### Tests
-as
+qw
+
+#### Contributing
+qw
 
 #### License
-The contents of this repository are protected under the <a href="https://opensource.org/licenses/BSD-2-Clause)">BSD 2-Caluse "Simplified" License.</a>
+The contents of this repository are protected under the <a href="https://opensource.org/licenses/MIT">MIT license.</a>

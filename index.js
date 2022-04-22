@@ -49,13 +49,13 @@ const questions = [
     {
         // Any tests you wrote for your project will be listed here, along with examples on how to run them
         type: 'input',
-        message: 'What would you like to be included in your "tests" section?',
+        message: 'What would you like to be included in your "tests" section? (leave blank to not include this section)',
         name: 'tests',
     },
     {
         // The license you select to cover your project will be detailed here, and a link to documentation will be provided
         type: 'list',
-        message: 'Which license would you like to include?',
+        message: 'Which license would you like to include? (select none to not include a licesne)',
         name: 'license',
         choices: ['Apache License 2.0', 'GNU General Public License v3.0', 'GNU General Public License v2.0', 'MIT license', 'BSD 2-Caluse "Simplified" License', 'BSD 3-Clause License', 'Boost Software License 1.0', 'Eclipse Public License 1.0', 'Creative Commons Zero v1.0 Universal', 'GNU Affero General Public License v3.0', 'GNU Lesser General Public License v3.0', 'Mozilla Public License 2.0', 'The Unlicense', `none`],
     },
@@ -70,6 +70,12 @@ const questions = [
         type: 'input',
         message: 'What is your email?',
         name: 'email',
+    },
+    {
+        // Include guidelines for contributing to the project, or leave blank to not include this section
+        type: 'input',
+        message: 'What guidelines would you like to provide contributors? (leave blank to not include this section)',
+        name: 'contributing',
     }
 ];
 
